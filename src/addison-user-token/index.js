@@ -1,6 +1,10 @@
 import { issueToken, requestToken } from "./token.js";
 import { user } from "./user.js";
 
+const sleep = async () => {
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 5000));
+};
+
 const issueTokenRoute = {
   method: "POST",
   url: "/addison-issue-token",
@@ -11,6 +15,7 @@ const issueTokenRoute = {
         throw new Error("Missing body");
       }
       const { userId } = body;
+      await sleep();
       const token = await issueToken(userId);
       reply.send(token);
     } catch (e) {
@@ -29,6 +34,8 @@ const requestTokenRoute = {
         throw new Error("Missing body");
       }
       const { username, password } = body;
+      await sleep();
+
       const token = await requestToken({ username, password });
       reply.send(token);
     } catch (e) {
@@ -47,6 +54,8 @@ const userRoute = {
         throw new Error("Missing body");
       }
       const { username, password } = body;
+      await sleep();
+
       const userDetails = await user({ username, password });
       reply.send(userDetails);
     } catch (e) {

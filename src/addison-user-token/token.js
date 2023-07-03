@@ -1,10 +1,10 @@
 import { user } from "./user.js";
 
-export const issueToken = (user) => {
-  if (!user) {
-    throw new Error("No username");
+export const issueToken = (userId) => {
+  if (!userId) {
+    throw new Error("No userid");
   }
-  return { token: `${user}_${new Date().toISOString()}` };
+  return { token: `${userId}_${new Date().toISOString()}` };
 };
 
 export const requestToken = (credentials) => {

@@ -6,7 +6,7 @@ describe("issueToken", () => {
   });
 
   it("throws error for empty username", () => {
-    expect(() => issueToken()).toThrow("No username");
+    expect(() => issueToken()).toThrow("No userid");
   });
 
   it("returns token", () => {
