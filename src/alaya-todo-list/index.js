@@ -59,7 +59,6 @@ const rDeleteTodo = {
       }
 
       const todos = db.data.todos.filter((todo) => todo.id !== id);
-      console.log(todos);
       db.data.todos = [...todos];
       await db.write();
       reply.send({ msg: "DELETED", id });

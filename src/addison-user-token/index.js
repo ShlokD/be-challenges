@@ -59,7 +59,6 @@ const userRoute = {
       const userDetails = await user({ username, password });
       reply.send(userDetails);
     } catch (e) {
-      console.log(e);
       reply.send({ error: e.message });
     }
   },
