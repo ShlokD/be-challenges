@@ -1,0 +1,21 @@
+# Node.js modules
+node_modules/
+jspm_packages/
+web_modules/
+
+# Build output
+dist/
+build/
+
+# Temporary files
+*.log
+*.pid
+*.lock
+*.tmp
+
+# IDE files
+.idea
+.vscode
+
+# Other
+.DS_Store
