@@ -1,5 +1,5 @@
 import { issueToken, requestToken } from "../token.js";
-
+import { jest } from "@jest/globals";
 describe("issueToken", () => {
   beforeEach(() => {
     jest.useFakeTimers().setSystemTime(new Date("2020-01-01"));
