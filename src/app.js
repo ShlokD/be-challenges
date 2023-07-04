@@ -2,6 +2,7 @@ import Fastify from "fastify";
 import routes from "./routes.js";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import multipart from "@fastify/multipart";
 
 import { Low, MemorySync } from "lowdb";
 import { JSONFile } from "lowdb/node";
@@ -21,6 +22,7 @@ export const fastify = Fastify({
 });
 
 fastify.decorateRequest("db", db);
+fastify.register(multipart);
 
 routes.forEach((route) => {
   fastify.route(route);
